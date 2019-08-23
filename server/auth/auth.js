@@ -15,7 +15,7 @@ exports.decodeToken = function() {
     }
 
     // this will call next if token is valid
-    // and send error if its not. It will attached
+    // and send error if its not. It will attach
     // the decoded token to req.user
     checkToken(req, res, next);
   };
@@ -33,7 +33,12 @@ exports.getFreshUser = function() {
     // to a real user in our DB. Either the user was deleted
     // since the client got the JWT, or
     // it was a JWT from some other source
-
+    let user = User.findById(req._id);
+    if(!user) {
+      next(new Error(`no user found with decoded JWT`));
+    }else {
+      req.user = user;
+    }
     // update req.user with fresh user from the
     // stale token data
 
@@ -46,7 +51,14 @@ exports.verifyUser = function() {
     var password = req.body.password;
 
     // if no username or password then stop.
-
+    if(!(username && password)) { 
+      next(new Error(`no username or password`));
+    } else {
+      User.find({username})
+      .then(function(user){
+        
+      })
+    }
     // look user up in the DB so we can check
     // if the passwords match for the username
 
