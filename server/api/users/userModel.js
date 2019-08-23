@@ -6,9 +6,11 @@ const UserSchema = new Schema({
     firstName: String,
     lastName: String,
     email: {
-        preferred: mongoose.SchemaType.Email,
-        required: true,
-        unique: true
+        preferred: {
+            type: mongoose.SchemaTypes.Email, 
+            required: true,
+            unique: true
+        },
     },
     // burgers: [
     //     {ref: 'burger', type: Schema.Types.ObjectId}
