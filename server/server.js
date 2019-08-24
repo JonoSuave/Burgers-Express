@@ -3,7 +3,7 @@ const app = express();
 const api = require('./api/api');
 const config = require('./config/config');
 const logger = require('./utils/logger');
-// const auth = require('./auth/auth');
+const auth = require('./auth/routes');
 
 require('mongoose').connect(config.db.url, {useNewUrlParser: true});
 
@@ -12,7 +12,7 @@ require('./middleware/appMiddleware')(app);
 
 // setup the api
 app.use('/api/', api);
-// app.use('/auth', auth);
+app.use('/auth', auth);
 
 // set up global error handling
 app.use(function(err, req, res, next) {
