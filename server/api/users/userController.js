@@ -46,15 +46,13 @@ exports.put = function(req, res, next) {
 };
 
 exports.post = function(req, res, next) {
-    let newuser = req.body;
-    newuser.password = User.encryptPassword(newuser.password);
-
-    User.create(newuser)
-        .then(function(user) {
-            res.json(user);
-        }, function(err) {
-            next(err);
-        });
+    let newUser = new User(req.body);
+    newUser.save(function(err, user) {
+      if(err) {next(err);}
+  
+      let token = signToken(user._id);
+      res.json({token: token});
+    });
 };
 
 exports.delete = function(req, res, next) {
