@@ -1,5 +1,6 @@
 const User = require('./userModel');
 const _ = require('lodash');
+const signToken = require('../../auth/auth').signToken;
 
 exports.params = function(req, res, next, id) {
     User.findById(id)
