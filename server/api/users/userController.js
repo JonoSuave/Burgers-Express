@@ -47,6 +47,7 @@ exports.put = function(req, res, next) {
 
 exports.post = function(req, res, next) {
     let newuser = req.body;
+    newuser.password = User.encryptPassword(newuser.password);
 
     User.create(newuser)
         .then(function(user) {
