@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.burger-height {
+  height: 200px;
+  width: 300px;
+  margin-bottom: 5%;
+}
+
+.fry-img, .shakes-img {
+  height: 200px;
+  width: 260px;
+  margin-bottom: 5%;
+  transition: width 1s, height 1s;
+}

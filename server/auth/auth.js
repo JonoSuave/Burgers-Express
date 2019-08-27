@@ -44,8 +44,7 @@ exports.getFreshUser = function() {
   }
 };
 
-exports.verifyUser = function() {
-  return function(req, res, next) {
+exports.verifyUser = function(req, res, next) {
     var username = req.body.username;
     var password = req.body.password;
 
@@ -74,7 +73,6 @@ exports.verifyUser = function() {
         next(err);
       });
   };
-};
 
 // util method to sign tokens on signup
 exports.signToken = function(id) {

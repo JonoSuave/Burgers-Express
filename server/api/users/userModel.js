@@ -21,7 +21,8 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    
     // burgers: [
     //     {ref: 'burger', type: Schema.Types.ObjectId}
     // ],
@@ -31,6 +32,14 @@ const UserSchema = new Schema({
     // fries: [
     //     {ref: 'fry', type: Schema.Types.ObjectId}
     // ]
+});
+
+UserSchema.pre('save', function(next) {
+    if (!this.isModified('password')) return next();
+  
+  
+    this.password = this.encryptPassword(this.password);
+    next();
 });
 
 UserSchema.methods = {

@@ -1,0 +1,28 @@
+{
+    "fries": [
+        {"fry": "The Asian Wanna Cajun",
+        "description": "Oriental spice dipped with Southern sass",
+        "imageUrl": "images/fries/cajun.png",
+        "price": "$3.48"},
+        {"fry": "The Goldilocks",
+        "description": "Mmmm, give me some of them curls",
+        "imageUrl": "images/fries/curly.png",
+        "price": "$2.37"},
+        {"fry": "Donkey Waffles",
+        "description": "And in the morning I'm making Waffles!...waffle fries",
+        "imageUrl": "images/fries/waffle.png",
+        "price": "$2.98"},
+        {"fry": "Dodger Fries",
+        "description": "Batter up, slugga!",
+        "imageUrl": "images/fries/dodger.png",
+        "price": "$4.78"},
+        {"fry": "Chi-pottle Fry Dippin'",
+        "description": "That one time Chipotle kept it G-Rated",
+        "imageUrl": "images/fries/chipotle.png",
+        "price": "$3.78"},
+        {"fry": "The Lone Star",
+        "description": "What's a steak without me?",
+        "imageUrl": "images/fries/steak.png",
+        "price": "$2.37"}
+    ]
+}

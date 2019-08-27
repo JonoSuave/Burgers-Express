@@ -1,11 +1,5 @@
-import React, {Component, Fragment} from 'react';
-import {Container, Row, Col, Card, CardBody, CardTitle, CardImg, CardText, CardSubtitle} from 'reactstrap';
-import NavbarPage from './Navbar';
-// import { CardText } from 'react-bootstrap/Card';
-
-class Shakes extends Component {
-    render() {
-      const Shakes = [
+{
+    "shakes": [
         {"shake": "Hula",
         "description": "Need a little coco?...Need a little pineapple?",
         "imageUrl": "images/shakes/pinaColada.png",
@@ -30,30 +24,6 @@ class Shakes extends Component {
         "description": "You think you can handle me??",
         "imageUrl": "images/shakes/chocolate.png",
         "price": "$2.37"}
-      ]
-      return (
-        <Fragment>
-          <NavbarPage />
-          <Container>
-            <Row>
-              {Shakes.map((fry) => (
-                <Col md="4">
-                  <Card className='mt-1'>
-                    <CardBody className="text-center">
-                      <CardTitle className="h5"> {fry.fry} </CardTitle>
-                      <CardImg className="fry-img" src={ fry.imageUrl } />
-                      <CardSubtitle className="h6"> { fry.price } </CardSubtitle>
-                      <CardText> { fry.description } </CardText>
-                    </CardBody>
-                  </Card>
-                </Col>
-              ))}
+    ]
+}
 
-            </Row>
-          </Container>
-        </Fragment>
-      )
-    }
-  }
-
-  export default Shakes
