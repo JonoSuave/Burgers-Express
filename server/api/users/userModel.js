@@ -40,6 +40,7 @@ UserSchema.methods = {
     },
     // hash the passwords
     encryptPassword: function(plainTextPword) {
+        console.log('Trying to encrypt signup password');
         if (!plainTextPword) {
         return ''
         } else {

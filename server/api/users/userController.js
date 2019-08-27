@@ -47,10 +47,13 @@ exports.put = function(req, res, next) {
 };
 
 exports.post = function(req, res, next) {
+    console.log(req.body);
     let newUser = new User(req.body);
+    console.log(newUser);
+
     newUser.save(function(err, user) {
       if(err) {next(err);}
-  
+      console.log(`Hello ${user}`);  
       let token = signToken(user._id);
       res.json({token: token});
     });
