@@ -8,6 +8,7 @@ import Burger from './Burgers'
 import Fries from './Fries'
 import Shake from './Shakes'
 import Users from './Users'
+import Image from './Image'
 
 const routing = (
   <Router>
@@ -17,6 +18,7 @@ const routing = (
       <Route path="/fries" component={Fries} />
       <Route path="/shakes" component={Shake} />
       <Route path="/users" component={Users} />
+      <Route path="/uploadImage" component={Image} />
     </div>
   </Router>
 )
