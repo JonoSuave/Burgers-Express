@@ -18,9 +18,46 @@ code {
   margin-bottom: 5%;
 }
 
+.favicon {
+  margin: 5px;
+}
+
 .fry-img, .shakes-img {
   height: 200px;
   width: 260px;
   margin-bottom: 5%;
   transition: width 1s, height 1s;
+}
+
+.menu-text {
+  color: #bc0404;
+  font-size: 20px;
+}
+
+.shakes-img:hover, .fry-img:hover {
+  width: 340px;
+  height: 280px;
+}
+
+#subNav {
+  position: relative;
+  left: 50px;
+  /* z-index: 20; */
+}
+
+#home-page {
+  background-image: url("/images/home_page_background.png");
+  background-repeat: no-repeat;
+  height: 800px;
+  background-size: 100%;
+  /* background: url("images/home_page_background.png"); */
+}
+
+#home-list-style {
+  list-style: none;
+}
+
+#title-message {
+  text-align: center;
+  color: #bc0404;
 }
