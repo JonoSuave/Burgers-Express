@@ -11,6 +11,7 @@ class NavbarPage extends Component {
             <NavbarBrand href="/">
               Burgers Express
             </NavbarBrand>
+
             <Nav className="mr-auto" navbar>
 
               <NavItem className="d-flex align-items-center">
@@ -27,8 +28,16 @@ class NavbarPage extends Component {
                 </NavLink>
               </NavItem>
 
-
             </Nav>
+
+            <Nav className="ml-auto" navbar>
+              <NavItem className="d-flex align-items-center">
+                <NavLink className="font-weight-bold" href="/signup">
+                  Signup
+                </NavLink>
+              </NavItem>
+            </Nav>
+
           </Navbar>
         </Fragment>
       )

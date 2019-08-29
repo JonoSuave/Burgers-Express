@@ -33,8 +33,8 @@ class Fries extends Component {
       ]
       return (
         <Fragment>
-          <NavbarPage />
           <Container>
+          <NavbarPage />
             <Row>
               {fries.map((fry) => (
                 <Col md="4">

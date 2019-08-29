@@ -47,8 +47,8 @@ exports.put = function(req, res, next) {
 };
 
 exports.post = function(req, res, next) {
-    console.log(req.body);
-    let newUser = new User(req.body);
+    console.log(req.body.user);
+    let newUser = new User(req.body.user);
     console.log(newUser);
 
     newUser.save(function(err, user) {

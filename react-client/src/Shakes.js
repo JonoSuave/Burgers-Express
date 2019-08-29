@@ -33,8 +33,8 @@ class Shakes extends Component {
       ]
       return (
         <Fragment>
-          <NavbarPage />
           <Container>
+          <NavbarPage />
             <Row>
               {Shakes.map((fry) => (
                 <Col md="4">

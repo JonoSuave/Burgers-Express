@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import NavbarPage from './Navbar';
 import {Container, Row, Col, Card, CardBody, CardTitle, CardImg, CardText, CardSubtitle} from 'reactstrap';
 // import { CardText } from 'react-bootstrap/Card';
 
@@ -32,6 +33,7 @@ class Burger extends Component {
       ]
       return (
         <Container>
+          <NavbarPage />
           <Row>
             {burgers.map((burger) => (
               <Col md="4">

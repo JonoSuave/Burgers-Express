@@ -3,6 +3,9 @@ import axios from 'axios';
 import './upload-image.css';
 import { storage } from './firebase-config';
 import DefaultImg from './assets/default-img.jpg';
+import NavbarPage from './Navbar';
+import { Container } from 'react-bootstrap';
+
 
 const API_URL = "http://localhost:4000/api";
 
@@ -70,21 +73,25 @@ class Image extends Component {
 
   render() {
     return (
-      <div className="main-container">
-        <h3 className="main-heading">Image Upload App</h3>
+      <Container>
+        <NavbarPage />
+        <div className="main-container">
+          <h3 className="main-heading">Image Upload App</h3>
 
-        <div className="image-container">
+          <div className="image-container">
 
-          <div className="process">
-            <h4 className="process__heading">Process: Using Firebase Storage</h4>
-            <p className="process__details">Upload image to Firebase storage and retrieve a reference to the image</p>
+            <div className="process">
+              <h4 className="process__heading">Process: Using Firebase Storage</h4>
+              <p className="process__details">Upload image to Firebase storage and retrieve a reference to the image</p>
 
-            <input type="file" className="process__upload-btn" onChange={(e) => this.uploadImage(e, "firebase")} />
-            <img src={this.state.firebaseImage} alt="" className="process__image" />
+              <input type="file" className="process__upload-btn" onChange={(e) => this.uploadImage(e, "firebase")} />
+              <img src={this.state.firebaseImage} alt="" className="process__image" />
+            </div>
+
           </div>
-
         </div>
-      </div>
+      </Container>
+      
     );
   }
 }

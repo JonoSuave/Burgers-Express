@@ -1,5 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import axios from 'axios';
+import NavbarPage from './Navbar';
+import {Container} from 'react-bootstrap';
 
 class SignupForm extends Component {
   // state = {
@@ -21,6 +23,16 @@ class SignupForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  setDefaultState = () => {
+    this.setState({
+      firstName: '',
+      lastName: '',
+      username: '',
+      password: '',
+      email: ''
+    })
+  }
+
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value});
   }
@@ -40,6 +52,8 @@ class SignupForm extends Component {
     .then(res => {
       console.log(res);
       console.log(res.data);
+      alert("Congrats, you created an account");
+      this.setDefaultState();
     })
     .catch(function(error){
       console.log(error);
@@ -48,30 +62,36 @@ class SignupForm extends Component {
 
   render() {
       return (
-        <form onSubmit={this.handleSubmit}>
+        <Fragment>
+          <Container>
+            <NavbarPage />
+            <form onSubmit={this.handleSubmit}>
 
-          <label>First Name: 
-          <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange.bind(this)} />
-          </label><br/>
+              <label>First Name: 
+              <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange.bind(this)} />
+              </label><br/>
 
-          <label>Last Name: 
-          <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange.bind(this)} />
-          </label><br/>
+              <label>Last Name: 
+              <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange.bind(this)} />
+              </label><br/>
 
-          <label>Username: 
-          <input type="text" name="username" value={this.state.username} onChange={this.handleChange.bind(this)} />
-          </label><br/>   
+              <label>Username: 
+              <input type="text" name="username" value={this.state.username} onChange={this.handleChange.bind(this)} />
+              </label><br/>   
 
-          <label>Password: 
-          <input type="text" name="password" value={this.state.password} onChange={this.handleChange.bind(this)} />
-          </label><br/>
-          
-          <label>Email: 
-          <input type="email" name="email" value={this.state.email} onChange={this.handleChange.bind(this)} />
-          </label><br/>
+              <label>Password: 
+              <input type="text" name="password" value={this.state.password} onChange={this.handleChange.bind(this)} />
+              </label><br/>
+              
+              <label>Email: 
+              <input type="email" name="email" value={this.state.email} onChange={this.handleChange.bind(this)} />
+              </label><br/>
 
-          <input type="submit" value="Submit" />
-        </form>
+              <input type="submit" value="Submit" />
+            </form>
+          </Container>
+        </Fragment>
+        
       )
         
   }
